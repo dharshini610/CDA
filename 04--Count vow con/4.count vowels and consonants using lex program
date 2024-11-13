@@ -1,0 +1,15 @@
+%{
+int vowcount=0,concount=0;
+%}
+%%
+[AEIOUaeiou]* {vowcount++;}
+.+ {concount++;}
+%%
+int yywrap(){}
+int main()
+{
+printf("enter the string\n");
+yylex();
+printf("no of vowels=%d\n",vowcount);
+printf("no of consonants=%d\n",concount);
+}
